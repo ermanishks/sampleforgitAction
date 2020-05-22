@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">GitActionApplication</string>
+    <string name="app_name">Imdb</string>
+    <string name="movie_year">(%s)</string>
+    <string name="vote_count">( votes count : %s)</string>
 </resources>
