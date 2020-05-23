@@ -8,9 +8,6 @@ on:
   pull_request:
     branches: 
     - 'master'
-  push:
-      branches:
-      - 'master'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -44,4 +41,5 @@ jobs:
         with:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
-    
+
+
