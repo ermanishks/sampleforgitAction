@@ -10,8 +10,8 @@ on:
     - 'master'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  unit_test:
+jobs: #  Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the jobs.<job_id>.needs keyword.
+  unit_test:  #   'unit_test' is a job id. all steps of this unit-test job will run on the same machine(here ubuntu-latest)
     name: Run Unit Tests
     runs-on: ubuntu-latest
   
@@ -24,9 +24,10 @@ jobs:
       - name: Running Unit tests
         run: bash ./gradlew test --stacktrace
     
-  apk_build:
+  apk_build:  # all steps of this apk_build job will run on the same machine(here ubuntu-latest)
       name: Generate APK
       runs-on: ubuntu-latest
+      needs: unit_test  # only run after unit test succeed
      
       steps:
       - uses: actions/checkout@v1
