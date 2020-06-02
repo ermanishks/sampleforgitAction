@@ -2,6 +2,7 @@ package com.contest.gitactionapplication.widgets
 /**
  * Created by Manish Kumar
  */
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.os.Bundle
@@ -81,6 +82,7 @@ class CustomView(context: Context,@Nullable  attrs: AttributeSet) : View(context
         var someText: String? = null
         var somethingShowing = false
 
+        @SuppressLint("NewApi")
         constructor(persistIn: Parcel):super(persistIn){
             someText = persistIn.readString()
             somethingShowing= persistIn.readBoolean()
@@ -89,6 +91,7 @@ class CustomView(context: Context,@Nullable  attrs: AttributeSet) : View(context
             this.someText = num1
             this.somethingShowing = num2
         }
+        @SuppressLint("NewApi")
         override fun writeToParcel(destination: Parcel?, flags: Int) {
             super.writeToParcel(destination, flags)
             destination?.writeString(someText);
