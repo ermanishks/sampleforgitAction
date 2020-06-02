@@ -24,7 +24,7 @@ class MainViewModel internal constructor(
                 val movieVO = movieRepository.getMovieDetailsByName(movie)
                 movieDetail.postValue(Resource.success(movieVO))
             } catch (e: Exception) {
-                movieDetail.postValue(Resource.error("Something Went Wrong", null))
+                movieDetail.postValue(Resource.error("Something Went horribly Wrong", null))
             }
         }
     }
